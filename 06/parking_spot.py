@@ -3,6 +3,12 @@ class ParkingSpot:
         self.__is_occupied__: bool = False
         self.__vehicle_no__: str | None = None
 
+    def is_occupied(self) -> bool:
+        return self.__is_occupied__
+
+    def vehicle_no(self) -> str | None:
+        return self.__vehicle_no__
+
     def park(self, vehicle_no: str) -> None:
         if self.__is_occupied__:
             raise ValueError('Cannot park in an occupied spot')
@@ -21,3 +27,5 @@ class ParkingSpot:
 
     def __str__(self) -> str:
         return 'Parking spot: ' + (f'[Occupied by {self.__vehicle_no__}]' if self.__is_occupied__ else '[Empty]')
+
+#TODO: write 2 methods for showing vehicle no and occupied state
